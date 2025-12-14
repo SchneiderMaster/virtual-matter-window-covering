@@ -6,7 +6,23 @@ You can use this for fast prototyping when developing other Matter-devices and t
 
 ## How to use
 
-Using this tool requires `yarn` and `git` to be installed.
+Execute the following command to find your virtual window covering under `localhost:3000`:
+```bash
+docker run -d \
+    --name window-covering \
+    --restart=unless-stopped \
+    --network=host \
+    schneidermaster/virtual-matter-window-covering:latest
+```
+A QR-Code and a code for pairing can be retrieved with:
+
+```bash
+docker logs window-covering
+```
+
+## How to develop
+
+Developing for this tool requires `yarn` and `git` to be installed.
 
 Simply execute the following to get started:
 ```bash
